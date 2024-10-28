@@ -7,10 +7,10 @@ import numpy as np
 
 print("==> loading resnet101 model...")
 # 加载预训练的ResNet50模型，去掉顶层的全连接层
-# base_model = ResNet101(weights='imagenet', include_top=False)
-resnet101_weights_file = 'mymodels/resnet101_weights_tf_dim_ordering_tf_kernels_notop.h5'
-resnet101_base_model = ResNet101(weights=None, include_top=False)  # 或者 include_top=False 如果不需要顶部的全连接层
-resnet101_base_model.load_weights(resnet101_weights_file)
+resnet101_base_model = ResNet101(weights='imagenet', include_top=False)
+# resnet101_weights_file = 'mymodels/resnet101_weights_tf_dim_ordering_tf_kernels_notop.h5'
+# resnet101_base_model = ResNet101(weights=None, include_top=False)  # 或者 include_top=False 如果不需要顶部的全连接层
+# resnet101_base_model.load_weights(resnet101_weights_file)
 
 # 添加全局平均池化层来获取固定长度的向量
 resnet101_model = Model(
