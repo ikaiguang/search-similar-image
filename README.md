@@ -48,6 +48,11 @@ python .\src\main.py
 **upload_and_search_similar**
 ![upload_and_search_similar](./public/upload_and_search_similar.png)
 
+## 切换模型
+
+**switch_model**
+![switch_model](./public/switch_model.png)
+
 ## Give a star! ⭐
 
 * 如果您觉得这个项目有趣，或者对您有帮助，请给个star吧！
