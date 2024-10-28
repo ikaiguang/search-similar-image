@@ -9,7 +9,7 @@ from src.web.web import web_pb
 from src.upload.upload import upload_pb
 from src.upload.search import search_pb
 
-app = Flask("myapp")
+app = Flask(import_name="myapp", static_folder="mytest")
 blueprints = [web_pb, upload_pb, search_pb]
 # 注册蓝图
 for bp in blueprints:

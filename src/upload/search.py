@@ -26,9 +26,17 @@ def search_similar():
     info_list = search_similar_images_by_path(file_path, collection_name=my_collection_name, top_k=5)
     img_list = [item.get("path", "") for item in info_list]
 
+    # 上传图片
+    upload_file_str = f'<img width="100" height="100" alt="{file_path}" src="{file_path}"/>'
+
+    # 查找结果
     search_res_str = "找不到相似的图片"
     if len(img_list) > 0:
-        search_res_str = '<br/><hr/>'.join(img_list)
-    res = "File successfully uploaded.<br/>" + dashboard + "<br/><h2>上传结果：</h2><br/><hr/>" + file_path + "<br/><hr/>"
+        # search_res_str = '<br/><hr/>'.join(img_list)
+        search_res_str = ""
+    for img_path in img_list:
+        search_res_str += f'<img width="100" height="100" alt="{img_path}" src="{img_path}"/>&nbsp;&nbsp;&nbsp;'
+
+    res = "File successfully uploaded.<br/>" + dashboard + "<br/><h2>上传结果：</h2><br/><hr/>" + upload_file_str + "<br/><hr/>"
     res += "<h2>匹配结果</h2>" + search_res_str
     return res
