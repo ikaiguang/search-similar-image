@@ -1,0 +1,20 @@
+<!-- templates/upload.html -->
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <title>Upload Files</title>
+</head>
+<body>
+<h2>Upload new File(s)</h2>
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="files[]" multiple>
+    <input type="submit" value="Upload File(s)">
+</form>
+<br/>
+<h2>Search Similar Image</h2>
+<form action="/search" method="post" enctype="multipart/form-data">
+    <input type="file" name="file]">
+    <input type="submit" value="Search Similar">
+</form>
+</body>
+</html>
