@@ -18,3 +18,7 @@ def save_file(file, file_path):
     if os.path.exists(file_path):
         os.remove(file_path)
     file.save(file_path)
+
+
+def to_slash(file_path):
+    return file_path.replace("\\", "/")

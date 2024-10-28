@@ -1,5 +1,6 @@
 from pymilvus import FieldSchema, CollectionSchema, DataType, MilvusClient
 from pymilvus.exceptions import MilvusException, DescribeCollectionException
+import json
 
 my_db_name = "my_database"
 my_collection_name = "my_collection_for_inception_v3"
@@ -82,10 +83,15 @@ def search_similar_images(query_vector, collection_name="my_collection", top_k=5
     # result_json = json.dumps(results, indent=4)
     # print(f"==> Similar resultJson: {result_json}")
     i = 0
+
+    img_list = []
     for result in results[0]:
         i += 1
         print(f"==> Similar result[{i}]: {result} \n\t id: {result.get('id')}, distance: {result.get('distance')}")
+        info = {"path": result.get("id"), "distance": result.get('distance')}
+        img_list.append(info)
         # print(f"Similar image with score {result.distance}: {result.get('id')}")
+    return img_list
 
 
 create_milvus_database(db_name=my_db_name)

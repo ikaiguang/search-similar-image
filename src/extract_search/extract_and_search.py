@@ -20,4 +20,4 @@ def search_similar_images_by_path(query_path, collection_name="my_collection", t
     print("\n\n\n")
     print(f'==> search_image_path: {query_path}')
     feature_vector = extract_features(query_path)
-    search_similar_images(feature_vector, collection_name=collection_name, top_k=top_k)
+    return search_similar_images(feature_vector, collection_name=collection_name, top_k=top_k)
