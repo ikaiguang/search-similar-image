@@ -31,6 +31,9 @@ def upload_files():
     upload_file_str = "--> 本次上传文件列表为空。"
     if len(img_list) > 0:
         upload_file_str = '<br/><hr/>'.join(img_list)
+        upload_file_str = ''
+    for img_path in img_list:
+        upload_file_str += f'<img width="100" height="100" alt="{img_path}" src="{img_path}"/>&nbsp;&nbsp;&nbsp;'
 
     # 提前特征和更新Milvus
     extract_features_and_upsert_collection(img_list=img_list, collection_name=my_collection_name)

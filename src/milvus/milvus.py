@@ -3,7 +3,7 @@ from pymilvus.exceptions import MilvusException, DescribeCollectionException
 import json
 
 my_db_name = "my_database"
-my_collection_name = "my_collection_for_inception_v3"
+my_collection_name = "my_demo"
 my_milvus_client = MilvusClient(
     uri="http://localhost:19530",
     db_name="default"
@@ -67,6 +67,15 @@ def create_milvus_collection(collection_name="my_collection", dimension=2048):
         print(f'==> collection_name: {collection_name}, describe_index: {index_res}')
 
 
+def drop_milvus_collection(collection_name="my_collection"):
+    try:
+        my_milvus_client.drop_collection(collection_name=collection_name)
+    except Exception as e:
+        print(f"==> drop_milvus_collection Exception: {e}")
+        print(f"==> drop_milvus_collection Exception: {e}")
+        print(f"==> drop_milvus_collection Exception: {e}")
+
+
 def insert_into_collection(vector, collection_name="my_collection", path=""):
     data = [
         {"path": path, "vector": vector}
@@ -95,4 +104,5 @@ def search_similar_images(query_vector, collection_name="my_collection", top_k=5
 
 
 create_milvus_database(db_name=my_db_name)
+drop_milvus_collection(collection_name=my_collection_name)
 create_milvus_collection(collection_name=my_collection_name)
