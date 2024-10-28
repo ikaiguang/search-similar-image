@@ -29,7 +29,7 @@ def say_hello():
 
 
 def run_app():
-    app.run(debug=True, host='0.0.0.0', port=8081)
+    app.run(debug=True, host='0.0.0.0', port=8081, use_reloader=False)
 
 
 # python .\src\main.py

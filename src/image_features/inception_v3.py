@@ -4,6 +4,7 @@ from tensorflow.keras.layers import GlobalAveragePooling2D
 from tensorflow.keras.models import Model
 import numpy as np
 
+print("==> loading inception_v3 model...")
 # 加载预训练的Inception V3模型，去掉顶层的全连接层
 # base_model = InceptionV3(weights='imagenet', include_top=False)
 inception_v3_weights_file = 'mymodels/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5'
@@ -14,6 +15,7 @@ inception_v3_model = Model(
     inputs=inception_v3_base_model.input,
     outputs=GlobalAveragePooling2D()(inception_v3_base_model.output),
 )
+print("==> inception_v3 model loaded")
 
 
 def extract_features_by_inception_v3(file_path):
