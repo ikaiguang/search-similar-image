@@ -50,6 +50,16 @@ python .\src\main.py
 **switch_model**
 ![switch_model](./public/switch_model.png)
 
+## build
+
+`docker pull python:3.10.15`
+
+```shell
+
+docker build -t search-similar-image:demo .
+
+```
+
 ## Give a star! ⭐
 
 * 如果您觉得这个项目有趣，或者对您有帮助，请给个star吧！
