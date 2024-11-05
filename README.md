@@ -1,14 +1,11 @@
 # 以图搜图
 
-**运行环境**
-
-* OS 版本: `Windows 11`
-* Python 版本: `Python 3.10.15`
-
 **运行依赖**
 
+* Python 版本: `Python 3.10.15`; 其他版本请自行验证。
 * inception_v3 or resnet101 模型
 * [milvus](https://milvus.io/)
+
 
 ## 运行 Demo
 
